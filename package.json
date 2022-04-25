@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "vuepress": "^2.0.0-beta.39"
+  },
+  "name": "wemedia",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/aotianlong/wemedia.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

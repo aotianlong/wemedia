@@ -18,6 +18,10 @@ module.exports = {
           {
             text: '软件许可证',
             link: '/computers/软件许可证.html',
+          },
+          {
+            text: '微软终止ie',
+            link: '/computers/微软终止ie.html',
           }
         ]
       },

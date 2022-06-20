@@ -11,7 +11,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "vuepress dev docs",
+    "dev": "vuepress dev --port 7790 docs",
     "build": "vuepress build docs"
   },
   "repository": {

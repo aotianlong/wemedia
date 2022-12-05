@@ -13,7 +13,7 @@
     "dev": "vitepress dev docs",
     "build": "vitepress build docs",
     "preview": "vitepress preview docs",
-    "deploy": "async -avz docs/.vitepress/dist/. pig.rocks:apps/aotianlong.com/."
+    "deploy": "rsync -avz docs/.vitepress/dist/. pig.rocks:apps/aotianlong.com/."
   },
   "dependencies": {
     "vitepress-plugin-auto-sidebar": "^1.0.5"

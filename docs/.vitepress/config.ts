@@ -1,15 +1,21 @@
+import { getSidebar } from 'vitepress-plugin-auto-sidebar'
+
+const sidebar = getSidebar({ contentRoot: '/docs', contentDirs: ['life'], collapsible: true, collapsed: true });
+
+
 export default {
   title: 'AoTianlong的自媒体',
   description: '这是一个傲天龙的自媒体网站',
   themeConfig: {
+    sidebar,
     nav: [
-      { text: 'Guide', link: '/guide' },
+      // { text: 'Guide', link: '/guide' },
       {
-        text: 'Dropdown Menu',
+        text: '社交账户',
         items: [
-          { text: 'Item A', link: '/item-1' },
-          { text: 'Item B', link: '/item-2' },
-          { text: 'Item C', link: '/item-3' }
+          { text: 'Twitter', link: 'https://www.twitter.com/aotianlong' },
+          { text: 'Github', link: 'https://www.github.com/aotianlong' },
+          { text: 'Facebook', link: 'https://www.facebook.com/aotianlong' }
         ]
       }
     ]

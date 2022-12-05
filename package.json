@@ -10,8 +10,12 @@
     "vue": "^3.2.45"
   },
   "scripts": {
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs",
+    "deploy": "async -avz docs/.vitepress/dist/. pig.rocks:apps/aotianlong.com/."
+  },
+  "dependencies": {
+    "vitepress-plugin-auto-sidebar": "^1.0.5"
   }
 }

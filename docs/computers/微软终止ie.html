@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>微软终止ie.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="%E5%BE%AE%E8%BD%AF%E7%BB%88%E6%AD%A2ie%E7%9A%84%E6%94%AF%E6%8C%81-%E4%BD%9C%E4%B8%BA%E4%B8%80%E4%B8%AA%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7%E8%B7%9F%E5%BC%80%E5%8F%91%E8%80%85%E8%B0%88%E8%B0%88%E5%AF%B9ie%E7%9A%84%E7%88%B1%E6%81%A8%E6%83%85%E4%BB%87">微软终止IE的支持， 作为一个普通用户跟开发者，谈谈对IE的爱恨情仇</h1>
+<p>我最早接触IE的时候， 是2000年， 那年我20岁，想想，已经是22年过去了。
+当年网吧里的操作系统是win98，IE5是这个操作系统的默认浏览器。
+IE的图标是一个蓝色的e字符， 也是我当年用的最多的软件， 我用它进入我们当地的网络聊天室， 网络聊天室里有来自本地的各个小伙伴。
+还用它浏览，新浪， 网易，搜狐等门户网站。
+甚至还能浏览yahoo等， 海外网站， 这一切神奇的东西让我惊喜不已。
+后来才知道，这就是大家所说的上网冲浪。
+IE绝对是上网冲浪的重要软件。</p>
+<p><img src="assets/20220621_082226_src_http___img1.mydrivers.com_img_20220617_s_bd022bca38ef47ffbb20a3ae4e0a916b.jpg&amp;refer=http___img1.mydrivers.webp" alt=""></p>
+<h2 id="%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E5%8E%86%E5%8F%B2">浏览器的历史</h2>
+<p>在这里，我们先简单的介绍一下IE浏览器的历史。
+ie在当年，并不是唯一的浏览器， 还有比它更早的浏览器，不过都被他打败了。</p>
+<p>1993年，世界上第一款真正意义上的浏览器Mosaic诞生了。</p>
+<p><img src="assets/20220621_082537_Mosaic-v3-screenshot.png" alt=""></p>
+<p>1994年美国的网景通信公司发布了网景浏览器的1.0版，该浏览器迅速的夺取了市场的主导权。随着后续版本的发布，网景浏览器甚至达到了90%的市场占有率。</p>
+<p><img src="assets/20220621_085851_f9198618367adab44157f00f2a3b37168501e4f5.png" alt=""></p>
+<p>javacript语言就是当时为了用户跟浏览器的互动而开发的计算机语言。据说作者Brendan Eich花了10天时间就设计了这门语言。
+我估计他想破头也未曾想到这门随便设计的语言最终会发展成为当今最流行的语言之一。</p>
+<p><img src="assets/20220621_090236__.jpg" alt=""></p>
+<p>IE由于是免费的，而且是默认安装的。最终网景的浏览器市场份额逐步被蚕食。</p>
+<p>1995年网景上市，第一天股价就暴涨了三倍，这引起了微软的担忧。微软开始介入了浏览器大战。
+微软购买了Mosaic的源码，基于Mosaic开发了自己的浏览器Internet Explorer。
+在这场大战中微软充分的利用了自己操作系统垄断地位的优势，依靠Windows95+IE的销售方式直接打垮了网景的垄断，而紧随其后的Windows 98捆绑IE4的做法更是直接要了网景的命。
+在这场浏览器大战中，最终微软利用自己的操作系统优势击败了网景。</p>
+<p>1998年1月，网景浏览器开始免费，并开放源代码，并成立了Mozilla基金会。
+值得一提的是: 2004年11月9日火狐浏览器Firefox 1.0版正式发行，这是Mozilla基金会基于之前netscape的源代码，开发的新一代浏览器。至此开启了IE的消亡之路。当然，这是后话。
+1998年11月24日，美国在线以42亿美元、免税换股的方式，收购网景。
+2001年8月，IE6发布。
+2003年 IE浏览器市场占有率达到了巅峰: 95%
+正由于没有了对手，微软没有了更新浏览器的动力，到下个版本的浏览器IE7的发布，已经是2006年10月了，时隔五年， 中间没有任何新版本的浏览器发布。
+我一度以为微软解散了IE的开发团队， 而事实也却是如此，当你把所有的对手都打趴下了， 还浪费时间跟金钱去改进浏览器，对于当时的微软来说，确实意义不大。
+最后IE7, IE8, IE9, IE10 , IE11, Edge相继被开发出来
+但是已经挽回不了微软在浏览器市场的颓势，Google的Chrome一骑绝尘。
+分析机构StatCounter公布2022年5月世界上最流行的浏览器数据分析结果。
+数据显示在移动浏览器领域Chrome以64.87%的市场份额继续保持无可争议的领先地位
+全部市场(移动+桌面)谷歌Chrome占有率为64.95%</p>
+<p><img src="assets/20220621_092022_1.png" alt=""></p>
+<p>2015年7月29日发布的IE11是最后一个IE版本，后来的windows中搭载的浏览器，就是Edge了。</p>
+<h2 id="%E5%BE%AE%E8%BD%AF%E7%9A%84%E5%8F%8D%E5%9E%84%E6%96%AD%E8%AF%89%E8%AE%BC%E5%B0%8F%E6%8F%92%E6%9B%B2">微软的反垄断诉讼小插曲</h2>
+<p><img src="assets/20220621_090158_Bill_Gates_2017_.jpg" alt=""></p>
+<p>正是由于微软捆绑了浏览器，所以美国政府开始对微软进行反垄断调查。
+有些年份的老网友，应该还记得，当时的文件管理器跟浏览器是可以互相变换的。
+在文件管理器里输入网址，文件浏览器会被成浏览器。在浏览器地址栏输入本地文件路径,浏览器会变成文件管理器。也就是说，浏览器跟操作系统是合为一体的。
+比尔盖茨在答辩的时候，就是利用这个，说是浏览器是操作系统的一部分，而不是单独的软件，最后打赢了官司。</p>
+<h2 id="ie%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E7%BC%BA%E7%82%B9">IE浏览器的缺点</h2>
+<p>IE浏览器的缺点，真的是罄竹难书，我在这里写一些最让人痛恨的缺点。</p>
+<h3 id="%E5%BC%B9%E5%87%BA%E7%AA%97%E5%8F%A3">弹出窗口</h3>
+<p>IE6没有标签浏览功能， 访问一个网站，就需要打开一个窗口， javascript语言也能弹出新的窗口。
+这导致了这个功能被滥用， 基本上都是弹出广告，有甚者一个网站可以弹出10来个小窗口，全是广告。
+是广告还是良心了， 更有甚者， 弹出一些少儿不宜的内容， 如果这时候边上正好有其他人，那叫一个尴尬。
+某些恶意网站，甚至可以让用户关闭不了浏览器，一直把人留住， 可以在关闭浏览器的事件里，添加弹出新窗口的代码。
+这样用户在刚关闭一个浏览器窗口的时候， 另外一个新窗口又被弹出了。防不胜防。
+我在这里插一段小故事:</p>
+<p><em>以前的网络聊天室有把人提出聊天室的功能，还有弹出无数弹窗的功能，让用户的电脑死机，必须硬件重启才行。
+当时的聊天室可以挂机在聊天室，就可以获得积分，然后可以根据积分，升级用户等级。
+有一个哥们半夜挂在聊天室，赚积分。然后不知道管理员发了什么神经，把这哥们踢出聊天室，弹了无数窗口。
+最终，这哥们早上起来的时候，发现电脑烧坏了。</em></p>
+<p>但是，那也是那些个人网站最赚钱的年代。
+要知道，每弹出一个广告，那可都是钱啊。
+当然，现在的浏览器，通过脚本是弹不出窗口了，只有用户有操作的时候，才允许弹出窗口，这已经是相当严格了。</p>
+<h3 id="%E6%94%AF%E6%8C%81activex%E6%8E%A7%E4%BB%B6-%E5%85%81%E8%AE%B8%E6%B5%8F%E8%A7%88%E5%99%A8%E5%9C%A8%E7%BA%BF%E5%AE%89%E8%A3%85%E6%89%A9%E5%B1%95%E8%AF%9E%E7%94%9F%E4%BA%863721%E6%B5%81%E6%B0%93%E8%BD%AF%E4%BB%B6%E4%B9%8B%E7%88%B6">支持ActiveX控件 允许浏览器在线安装扩展，诞生了3721流氓软件之父</h3>
+<p><img src="assets/20220621_091851_20148116473932996.jpg" alt=""></p>
+<p>IE有这么个功能，使用object标签，可以内嵌一些其他组件(ActiveX)，比如银行，会用自己的控件替代浏览器的输入框，防止键盘输入被窃听。
+浏览器还可以运行VBScript, 然后通过vbscript创建shell, fsobject，等等。 只要用户不小心点击了确定，那就是意味着网站能任意访问创建本地文件了， 所以说，访问了一个网页，中了病毒，真不是开玩笑的。
+虽然以上功能很强大，但是，更多的是被滥用。
+浏览器的这种安全问题，也成就了一些网站或者公司。
+比如臭名昭著的3721中文上网。
+曾经有一段时间，只要打开浏览器上网，就会弹出一个3721的插件安装提示。
+3721是什么？老的网友，应该有记忆。这个是一个由现任360公司董事长周鸿祎创办的中文上网插件，提供输入中文直达网站的功能。
+比如在地址栏里输入新浪，会直达新浪，而不需要输入全部域名。
+他就是依靠出售中文直达的功能赚钱。
+本来这也无可厚非，但是3721的推广方式，太流氓了。
+当年很大部分网站都做了3721的推广， 只要打开网站，就会弹出一个安装3721的弹窗， 只要你一不小心点了确定， 那么，恭喜你， 你的浏览器上就多了一条工具栏。
+最夸张的时候，我的浏览器，有三四条莫名其妙的工具栏。
+安装之后，想要删除这个工具栏，对不起，删不掉。
+正由于这种流氓方式推广自家软件，因此周鸿祎被称为流氓软件之父。
+讽刺的是，3721后来卖给了雅虎，而周鸿祎则创办了后来的360杀毒。
+这时候令人啧啧称奇的操作来了，360会把3721判定为流氓软件， 这个操作，我也是服了。</p>
+<p><img src="assets/20220621_090549_65dc62e5ly8flb1l9qjxfj20ro0rowfm.jpg" alt=""></p>
+<h3 id="hao123%E6%9C%AA%E7%BB%8F%E7%94%A8%E6%88%B7%E5%90%8C%E6%84%8F%E4%BF%AE%E6%94%B9%E6%B5%8F%E8%A7%88%E5%99%A8%E9%A6%96%E9%A1%B5">hao123未经用户同意修改浏览器首页</h3>
+<p>曾经的一些网站也受益于ie的安全问题，比如流量巨大的hao123网站，就是被百度收购了的那个网址导航网站。
+当年的崛起，也离不开一些流氓行为，比如：
+用户只要进入了hao123网站， 该网站就会未经用户同意的情况下自动把自身添加进收藏夹，自动设置浏览器的首页。而且还改不回来。
+这个操作虽然流氓，但是确实有效，当年这个不起眼的网站，可是各个网吧电脑浏览器的默认首页。据说它的流量直逼当年的三大门户网站。</p>
+<p>现在的浏览器，已经无法用脚本添加网页进收藏夹了，也不能设置成主页了。</p>
+<h3 id="%E6%97%A0%E6%8F%90%E7%A4%BA%E8%AF%BB%E5%8F%96%E5%89%AA%E8%B4%B4%E6%9D%BF%E5%B9%B6%E6%97%A0%E6%8F%90%E7%A4%BA%E4%B8%8A%E4%BC%A0%E5%88%B0%E7%BD%91%E7%AB%99">无提示读取剪贴板并无提示上传到网站</h3>
+<p>那些年我也写过一些个人项目， 在网页里插入了读取剪贴板的代码，并且将内容用ajax上传到网站。
+(当然，我的网站访问量很小，也只是作为好奇，作为测试而已，后来代码被移除了，并没有干什么坏事。)
+这是一个很可怕的功能， 有些用户剪贴板可能保存了一些重要的信息， 就这样被上传到了网站上， 后果真的不堪设想。
+另外， IE可以用小本直接模拟一个文件上传控件点击, 然后会弹出一个文件选择对话框，这个时候，如果你选择了一个文件。
+那么这个文件就很可能会在你不知情的情况下，直接被上传到了服务器。
+现在的浏览器都是无法用脚本模拟文件上传控件点击了。</p>
+<h2 id="%E5%AF%B9%E5%BC%80%E5%8F%91%E8%80%85%E4%B8%8D%E5%8F%8B%E5%A5%BD">对开发者不友好</h2>
+<p>我简单列举一些:</p>
+<p><img src="assets/20220621_091144_74ea6be5-177c-4123-ae3e-235ab3ae1e99.png" alt=""></p>
+<ul>
+<li>比如css 需要在css类名前添加'+ *'等，奇怪字符来解决一些某些特定浏览器下的行为。
+我一度对这种方式感到困惑， 软件开发不是应该很严谨的吗？ 还有利用bug作为特性来差异化编程的操作？</li>
+<li>早期开发，都没有开发者工具， 为了调试js程序，需要打印变量的时候，一般都是用alert来把值打印出来。
+一些脚本错误， 都没有定位到程序的哪儿一行， 调试程序是极度困难的。
+所以我也很佩服在当时的谷歌能写出gmail这样的应用， 在当时来说，真的是惊为天人。
+把一个网页写成跟本地应用程序一样的体验，在当年来说，是简直不可思议的。</li>
+<li>IE还在渲染的网页有时候莫名的会出现元素不见， 位置不正确，等奇怪情况，主要是不清楚在什么特定情况下会出现，这个问题真的能让人抓狂。
+那时候，我就希望这该死的IE能不能给我淘汰掉， 但是看着它90以上的市场占有率， 不得不低下了头。</li>
+<li>png图片不能透明，这么简单的需求，IE6硬是不支持。直到IE7出来后才开始支持。</li>
+<li>对w3c标准支持差，其他的浏览器chrome, firefox对w3c的标准，基本上都支持。IE一般都需要polyfill才能更接近的支持w3c标准。</li>
+</ul>
+<h2 id="%E6%B2%A1%E8%90%BD">没落</h2>
+<p>我上面曾提到，IE6发布直到到IE7发布，时隔五年， 中间没有任何新版本的浏览器发布(只发布了两个补丁包)，那也是网站开发者黑色的日子，我想，每个网站开发者都痛恨IE6。</p>
+<p><img src="assets/20220621_091125_dc54564e9258d109a4fdf7014eb748b56d814d64.png" alt=""></p>
+<p>好在随着Firefox的诞生，Google Chrome的崛起，这一切都变了。
+我清楚的记得，当年Firefox推广初期， Google 大力支持， 甚至推出推广计划， 让各大网站提供下载， 每下载一个火狐浏览器， 就给网站主广告费， 当年我也做过，这极大的推动了Firefox的普及。
+Goole推广Firefox这个情况，直到Google自己的Chrome发布之后， 才逐步停止。
+在Google跟Mozilla的不断努力下, IE后来沦落到成为<strong>用来下载其他浏览器的浏览器</strong>:
+用户新装系统的第一件事可能就是打开IE浏览器然后去下了一个Chrome浏览器。
+到目前为止，IE的浏览器的市场份额已经跌到1%以下了。确实存在的意义已不大。</p>
+<h2 id="%E7%8E%B0%E5%9C%A8">现在</h2>
+<p>现代的浏览器基本是Chromium的天下
+使用了Chromium内核的微软的Edge浏览器已经替代了IE浏览器了，连那个小众浏览器Opera也使用了Chromium内核了。
+目前了拥有独立内核的浏览器，分别是火狐(Gecko内核)， Safari(webkit内核), 还有是基于chromium系了。
+时代在不断的进步，IE这个时代的产物，也走到了尽头，完成了它的历史使命。
+虽然我痛恨IE，但是，它也承载了我的青春，让我们好好的跟它告个别吧。</p>
+
+</body>
+</html>

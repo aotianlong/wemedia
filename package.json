@@ -1,24 +1,17 @@
 {
-  "dependencies": {
-    "vuepress": "^2.0.0-beta.39"
-  },
   "name": "wemedia",
   "version": "1.0.0",
   "main": "index.js",
-  "directories": {
-    "doc": "docs"
+  "repository": "git@gitee.com:aotianlong/wemedia.git",
+  "author": "aotianlong <aotianlong@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "vitepress": "^1.0.0-alpha.29",
+    "vue": "^3.2.45"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "vuepress dev --port 7790 docs",
-    "build": "vuepress build docs"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://gitee.com/aotianlong/wemedia.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "description": ""
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  }
 }

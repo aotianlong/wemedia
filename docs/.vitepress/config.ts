@@ -25,10 +25,11 @@ export default {
   lang: 'zh-CN',
   title: 'AoTianlong的自媒体',
   description: '这是一个傲天龙的自媒体网站',
+  lastUpdated: true,
   themeConfig: {
     sidebar: fixedSidebar,
     footer: {
-      message: 'Released under MIT license',
+      message: 'Aotianlong.com保留所有权利',
       coopyright: '2022 Aotianlong.com'
     },
     nav: [
